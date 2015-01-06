@@ -1,17 +1,15 @@
-
-apply plugin: 'com.android.library'
-
-repositories {
-  jcenter()
-}
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.1"
 
     defaultConfig {
-        minSdkVersion 15
+        applicationId "com.jimulabs.googlemusicmock"
+        minSdkVersion 16
         targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
     }
 
     compileOptions {
@@ -24,8 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.2'
+    compile 'com.android.support:recyclerview-v7:21.0.+'
+    compile 'com.jakewharton:butterknife:6.0.0'
+
+    compile project(':lib')
 }

@@ -1,0 +1,19 @@
+<!-- [ Mirror metadata ] generatedAt: 1419479305609 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen theme="AppTheme" sandbox="com.jimulabs.googlemusicmock.SneakPeekBox">
+    <_content layout="@layout/sneak_peek">
+        <!-- ImageView Examples:
+        <fireworks src="@drawable/image_resource" />
+        <fireworks src="relative_path/image.jpg" /> -->
+        <fireworks />
+        <!-- TextView Examples:
+        <textView text="@string/string_resource" />
+        <textView text="Text literal" textSize="14sp" /> -->
+        <textView />
+        <hot_swapping />
+    </_content>
+</screen>
