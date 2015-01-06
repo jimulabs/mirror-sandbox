@@ -13,6 +13,21 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 /**
+ *
+ * This is the superclass of a few simple wrappers for Android's property animator system.
+ *
+ * The most interesting bit so far is the concept of "stage setting": when MirrorAnimator#start()
+ * is called, the properties of all animation targets will be automatically set to the start
+ * value according to the animator. This removes the need for manual setup code before the animation.
+ *
+ * It's better to illustrate this with an example: say we have two views, view1 and view2. We want
+ * to fade in view1 and afterwards zoom in view2. With just Android's animator, before starting the
+ * animation, we'd need to set the alpha value of view1 to 0, and set the scale of view2 to 0.
+ * With MirrorAnimator, we can just do this:
+ *
+ *   view1.alpha(0, 1).followedBy(view2.scale(0, 1)).start();
+ *
+ *
  * Created by lintonye on 14-12-16.
  */
 public abstract class MirrorAnimator {

@@ -6,6 +6,15 @@ import android.view.View;
 import java.util.List;
 
 /**
+ *
+ * Extend this class to get a sandbox useful for designing and developing
+ * Android's property animators. This class includes some helper methods for finding a view
+ * and choreographing animators.
+ *
+ * When you are done experimenting, just use the animators in production:
+ *
+ *   new MyFantasticAnimatorBox(view).someAnimation().start();
+ *
  * Created by lintonye on 14-12-16.
  */
 public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
@@ -16,12 +25,6 @@ public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
     public MirrorAnimatorSandbox(View root) {
         mRootView = root;
         setGlobalSpeed(1);
-    }
-
-    public static class InvalidViewRefException extends RuntimeException {
-        public InvalidViewRefException(String ref) {
-            super(String.format("Invalid view ref:\"%s\"", ref));
-        }
     }
 
     public static class CannotFindViewException extends RuntimeException {

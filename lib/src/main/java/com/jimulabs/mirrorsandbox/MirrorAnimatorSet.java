@@ -9,6 +9,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * Simple wrapper for {@link android.animation.AnimatorSet}. Everything behaves the same except that
+ * {@link #getDuration()} returns the actual duration according to all children animators.
+ *
  * Created by lintonye on 2014-12-19.
  */
 public class MirrorAnimatorSet extends MirrorAnimator {
@@ -64,6 +67,11 @@ public class MirrorAnimatorSet extends MirrorAnimator {
         return this;
     }
 
+    /**
+     *
+     * @return the actual duration according to all children animators, instead of a value set using
+     * {@link android.animation.AnimatorSet#setDuration(long)}
+     */
     @Override
     public long getDuration() {
         if (mOrdering == Ordering.Together) {

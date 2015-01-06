@@ -8,6 +8,9 @@ import android.content.Context;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 /**
+ *
+ * A simple wrapper for {@link android.animation.ObjectAnimator}.
+ *
  * Created by lintonye on 2014-12-19.
  */
 public class MirrorObjectAnimator extends MirrorAnimator {

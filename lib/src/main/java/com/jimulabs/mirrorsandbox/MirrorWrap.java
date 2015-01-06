@@ -3,6 +3,8 @@ package com.jimulabs.mirrorsandbox;
 import android.content.Context;
 
 /**
+ * Wrap an arbitrary object to use {@link com.jimulabs.mirrorsandbox.MirrorAnimator}
+ *
  * Created by lintonye on 2014-12-21.
  */
 public class MirrorWrap {
