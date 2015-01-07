@@ -34,7 +34,7 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
 
         List<ChartView.HighlightDot> dots = chart.getHighlightDots();
 
-        setGlobalSpeed(1);
+//        setGlobalSpeed(1);
 
 //        enter(dots).start();
 

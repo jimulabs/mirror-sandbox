@@ -63,7 +63,7 @@ public class ChartView extends View {
         mHighlightIndices = highlightIndices;
         mHighlightDots = createHighlightDots(points, highlightIndices);
         updatePath();
-//        mAnimatorBox.enter(mHighlightDots).start();
+        mAnimatorBox.enter(mHighlightDots).start();
     }
 
     private List<HighlightDot> createHighlightDots(Point[] points, int[] highlightIndices) {
