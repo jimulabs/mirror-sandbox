@@ -1,8 +1,9 @@
-package com.jimulabs.googlemusicmock;
+package com.jimulabs.googlemusicmock.box;
 
 import android.content.Context;
 import android.view.View;
 
+import com.jimulabs.googlemusicmock.R;
 import com.jimulabs.mirrorsandbox.MirrorAnimator;
 import com.jimulabs.mirrorsandbox.MirrorAnimatorSandbox;
 import com.jimulabs.mirrorsandbox.MirrorView;

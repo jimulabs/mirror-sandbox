@@ -4,7 +4,7 @@ which to populate your previewed layout. For a complete specification
 of sample data, please see http://jimulabs.com/sample-data-specifications/ 
 
 Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
-<screen sandbox="com.jimulabs.googlemusicmock.ButterknifeBox">
+<screen sandbox="com.jimulabs.googlemusicmock.box.ButterknifeBox">
     <_content layout="@layout/butterknife">
     </_content>
 </screen>
