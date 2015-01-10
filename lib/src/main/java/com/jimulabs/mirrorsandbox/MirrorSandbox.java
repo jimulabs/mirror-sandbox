@@ -24,4 +24,6 @@ public interface MirrorSandbox {
      * views with mock data. This method is not supposed to be called from production code.
      */
     void enterSandbox();
+
+    void destroySandbox();
 }

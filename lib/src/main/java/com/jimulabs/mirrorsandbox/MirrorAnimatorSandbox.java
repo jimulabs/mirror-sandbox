@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * Extend this class to get a sandbox useful for designing and developing
+ * Extend this class to get a sandbox which is useful for designing and developing
  * Android's property animators. This class includes some helper methods for finding a view
  * and choreographing animators.
  *
@@ -25,6 +25,11 @@ public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
     public MirrorAnimatorSandbox(View root) {
         mRootView = root;
         setGlobalSpeed(1);
+    }
+
+    @Override
+    public void destroySandbox() {
+        // does nothing by default
     }
 
     public static class CannotFindViewException extends RuntimeException {
