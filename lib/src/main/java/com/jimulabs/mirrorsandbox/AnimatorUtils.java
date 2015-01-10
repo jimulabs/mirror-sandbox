@@ -15,11 +15,12 @@ import java.util.List;
  */
 public class AnimatorUtils {
     private static double sSpeed = 1;
-    public static void setGlobalSpeed(double speed) {
+
+    public synchronized static void setGlobalSpeed(double speed) {
         sSpeed = speed;
     }
 
-    static long computeDuration(long duration1x) {
+    static synchronized long computeDuration(long duration1x) {
         return (long) (duration1x * 1/sSpeed);
     }
 
