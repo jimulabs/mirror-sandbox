@@ -8,7 +8,7 @@ package com.jimulabs.mirrorsandbox;
  * Mirror uses classes that implement this interface and set the "sandbox" attribute of
  * a mirror screen file:
  *
- * <screen sandbox="foo.bar.BarBox">
+ * &lt;screen sandbox="foo.bar.BarBox"&gt;
  *
  * In most cases, you can subclass {@link com.jimulabs.mirrorsandbox.MirrorAnimatorSandbox} which
  * provides a few helper methods that make tweaking animations easy.
@@ -19,7 +19,7 @@ public interface MirrorSandbox {
     /**
      * Mirror calls this method from the UI thread after the layout pass for the entire screen finishes.
      * Methods such as View#getMeasuredWidth() will return proper values.
-     * <p/>
+     *
      * This method is considered as a "design mode" used for quick experiments or populating
      * views with mock data. This method is not supposed to be called from production code.
      */
