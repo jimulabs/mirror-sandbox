@@ -7,39 +7,9 @@ buildscript {
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.2.1'
-}
-
 allprojects {
     repositories {
-        mavenCentral()
+        jcenter()
     }
 }
-
-def makeBuildId() {
-    // If we're on Jenkins, use the build number as a tag. Otherwise use a
-    // timestamp. BUILD_NUMBER will be set by Jenkins.
-    def buildId = System.getenv()['BUILD_NUMBER']
-    if (buildId == null) { // Not on jenkins
-        def cal = Calendar.instance
-        def format = new java.text.SimpleDateFormat('yyyyMMddHHmm')
-        buildId = format.format(cal.time)
-    }
-    return buildId
-}
-
-/*
-   buildTag = [version]-[versionCode].[buildId]
- */
-allprojects {
-    version = "0.1"
-    def id = makeBuildId()
-    ext {
-        versionCode = 1
-        buildId = versionCode + '.' + id
-        buildTag = "$version-$buildId"
-    }
-}
-
 
