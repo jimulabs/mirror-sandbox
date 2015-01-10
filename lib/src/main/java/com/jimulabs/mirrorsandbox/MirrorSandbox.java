@@ -25,5 +25,9 @@ public interface MirrorSandbox {
      */
     void enterSandbox();
 
+    /**
+     * Mirror calls this method from the UI thread in the Activity#onDestroy() call back.
+     * This method can be used to release things that are not supposed to be persist across refreshes.
+     */
     void destroySandbox();
 }
