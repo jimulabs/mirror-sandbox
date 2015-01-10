@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/jimulabs/mirror-sandbox.png)](https://travis-ci.org/jimulabs/mirror-sandbox)
 
 #Mirror Sandbox
 Mirror Sandbox is a companion library for the Java code hot-swapping feature in [jimu Mirror](http://jimumirror.com). Mirror Sandbox classes are "design mode" code that allow you to build and preview animations and interactions **piecewise** -- think of it as a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) for Android UI development.
