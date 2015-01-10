@@ -1,6 +1,7 @@
 package com.jimulabs.googlemusicmock.box;
 
 import android.graphics.Point;
+import android.util.Log;
 import android.view.View;
 
 import com.jimulabs.googlemusicmock.ChartView;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ *
  * Created by lintonye on 2014-12-20.
  */
 public class ChartSandbox extends MirrorAnimatorSandbox {
@@ -25,11 +27,17 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
 
     @Override
     public void enterSandbox() {
+        Log.d("ChartBox", "entering "+this);
         fillChartWithMockData();
         sequence($(R.id.chart).animator("spanX", 0f, 1f).duration(1000),
                 $(R.id.chart).animator("spanY", 0f, 1f).duration(1000),
                 showMarkers()
         ).start();
+    }
+
+    @Override
+    public void destroySandbox() {
+        Log.d("ChartBox", "destroying "+this);
     }
 
     private void fillChartWithMockData() {
