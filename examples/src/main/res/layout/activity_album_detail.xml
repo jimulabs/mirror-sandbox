@@ -12,8 +12,8 @@
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:scaleType="centerCrop"
-            android:id="@+id/album_art"
-            android:transitionName="albumArt" />
+            android:contentDescription="@string/imageViewContentDescription"
+            android:id="@+id/album_art"/>
 
         <RelativeLayout
             android:background="#31576b"
@@ -22,6 +22,8 @@
             android:id="@+id/title_container"
             android:paddingLeft="40dp"
             android:paddingRight="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="20dp"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:layout_width="match_parent"
@@ -31,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text"
+                android:text="@string/large_text"
                 android:id="@+id/title" />
 
             <TextView
@@ -39,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
                 android:layout_alignLeft="@id/title"
+                android:layout_alignStart="@id/title"
                 android:text="New Text"
                 android:id="@+id/subtitle" />
         </RelativeLayout>
@@ -49,11 +52,13 @@
             android:background="@drawable/green_circle"
             android:src="@drawable/ic_pause"
             android:id="@+id/fab"
+            android:contentDescription="@string/imageViewContentDescription"
             android:layout_above="@+id/title_container"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="-30dp"
-            android:layout_marginRight="30dp" />
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"/>
 
         <LinearLayout
             android:id="@+id/info_container"
@@ -68,17 +73,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_green_volume"
+                android:contentDescription="@string/imageViewContentDescription"
                 android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:id="@+id/volume" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
                 android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceInverse"
                 android:textStyle="bold"
-                android:text="New Text"
+                android:text="@string/new_text"
                 android:id="@+id/name" />
 
             <TextView
@@ -86,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceInverse"
                 android:layout_marginRight="20dp"
-                android:text="New Text"
+                android:text="@string/new_text"
                 android:id="@+id/time" />
         </LinearLayout>
     </RelativeLayout>

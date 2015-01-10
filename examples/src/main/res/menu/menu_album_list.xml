@@ -5,7 +5,7 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_search"
         android:icon="@drawable/abc_ic_search_api_mtrl_alpha"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         app:actionViewClass="android.support.v7.widget.SearchView"
-        />
+        android:title="@android:string/search_go"/>
 </menu>

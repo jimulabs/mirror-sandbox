@@ -1,39 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GoogleMusicMock</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_album_detail">AlbumDetail</string>
-    <string name="blah">abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd abcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-            abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-    abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-        abcd abcdabcd abcdabcd abcdabcd abcdabcd abcdabcd
-
-    </string>
+    <string name="imageViewContentDescription">contentDescription</string>
+    <string name="new_text">New Text</string>
+    <string name="large_text">Large Text</string>
+    <string name="mirror_sandbox">Mirror Sandbox</string>
+    <string name="hotswapping">Yes! Hot-swapping Java code!</string>
+    <string name="for_custom_views">For custom views and animations</string>
 
 </resources>
