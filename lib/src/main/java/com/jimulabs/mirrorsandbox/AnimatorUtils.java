@@ -24,22 +24,22 @@ public class AnimatorUtils {
         return (long) (duration1x * 1/sSpeed);
     }
 
-    public static MirrorAnimator together(Context context, MirrorAnimator... animators) {
-        return together(context, Arrays.asList(animators));
-    }
-
-    public static MirrorAnimator sequence(Context context, MirrorAnimator... animators) {
-        return sequence(context, Arrays.asList(animators));
-    }
-
     public static MirrorAnimator together(Context context, List<MirrorAnimator> animators) {
         return new MirrorAnimatorSet(context, animators,
                 MirrorAnimatorSet.Ordering.Together);
     }
 
+    public static MirrorAnimator together(Context context, MirrorAnimator... animators) {
+        return together(context, Arrays.asList(animators));
+    }
+
     public static MirrorAnimator sequence(Context context, List<MirrorAnimator> animators) {
         return new MirrorAnimatorSet(context, animators,
                 MirrorAnimatorSet.Ordering.Sequentially);
+    }
+
+    public static MirrorAnimator sequence(Context context, MirrorAnimator... animators) {
+        return sequence(context, Arrays.asList(animators));
     }
 
     public static MirrorAnimator animator(Context context, Object target, String property, int... values) {
