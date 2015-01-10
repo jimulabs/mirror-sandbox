@@ -33,5 +33,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:21.0.+'
     compile 'com.jakewharton:butterknife:6.0.0'
 
+    // compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.1.+'
     compile project(':lib')
 }

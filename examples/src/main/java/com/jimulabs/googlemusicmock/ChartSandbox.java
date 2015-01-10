@@ -1,10 +1,8 @@
 package com.jimulabs.googlemusicmock;
 
-import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
 
-import com.jimulabs.mirrorsandbox.AnimatorUtils;
 import com.jimulabs.mirrorsandbox.MirrorAnimator;
 import com.jimulabs.mirrorsandbox.MirrorAnimatorSandbox;
 
@@ -25,20 +23,29 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
 
     @Override
     public void enterSandbox() {
+        fillChartWithMockData();
+        sequence($(R.id.chart).animator("spanX", 0f, 1f).duration(1000),
+                $(R.id.chart).animator("spanY", 0f, 1f).duration(1000),
+                showMarkers()
+        ).start();
+    }
+
+    private void fillChartWithMockData() {
         ChartView chart = (ChartView) $(R.id.chart).getView();
-//        chart.setSpanY(0.2f);
-        int count = 25;
+        Point[] points = createFixedSamplePoints();
+        int[] highlightIndices = {1, 5, 7, 11, 15, 18};
+        chart.setData(points, highlightIndices);
+    }
 
-        List<Point> points = createRandomPoints(count, chart.getMeasuredWidth(), chart.getMeasuredHeight() / 3);
-        chart.setData(points.toArray(new Point[0]), createHighlightIndices(5, count));
-
+    private void animateChart() {
+        ChartView chart = (ChartView) $(R.id.chart).getView();
         List<ChartView.HighlightDot> dots = chart.getHighlightDots();
+        showChart(dots).start();
+    }
 
-//        setGlobalSpeed(1);
-
-//        enter(dots).start();
-
-//        sq(enter(dots), exit(dots), enter(dots)).start();
+    private MirrorAnimator showMarkers() {
+        ChartView chart = (ChartView) $(R.id.chart).getView();
+        return showHighlights(chart.getHighlightDots());
     }
 
     public MirrorAnimator showHighlights(List<ChartView.HighlightDot> dots) {
@@ -50,8 +57,8 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
         });
 
         List<MirrorAnimator> animators = new ArrayList<>(dots.size());
-        for (int i=0;i<dots.size();i++) {
-            MirrorAnimator showDot = wrapToAnimate(dots.get(i)).animator("radius", 0, 5f).duration(200);
+        for (int i = 0; i < dots.size(); i++) {
+            MirrorAnimator showDot = wrapToAnimate(dots.get(i)).animator("radius", 0, 15f).duration(200);
             animators.add(showDot.startDelay(150 * i));
         }
 
@@ -67,20 +74,22 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
         return result;
     }
 
-    public MirrorAnimator exit(List<ChartView.HighlightDot> dots) {
+    public MirrorAnimator hideChart(List<ChartView.HighlightDot> dots) {
         return sq(hideDots(dots), shrinkY(), shrinkX()).startDelay(1000);
     }
 
     public MirrorAnimator hideDots(List<ChartView.HighlightDot> dots) {
         List<MirrorAnimator> animators = new ArrayList<>(dots.size());
-        for (int i=0;i<dots.size();i++) {
+        for (int i = 0; i < dots.size(); i++) {
             MirrorAnimator showDot = wrapToAnimate(dots.get(i)).animator("radius", 8f, 0f).duration(200);
             animators.add(showDot);
+
         }
         return together(animators);
+
     }
 
-    public MirrorAnimator enter(List<ChartView.HighlightDot> dots) {
+    public MirrorAnimator showChart(List<ChartView.HighlightDot> dots) {
         return sq(expandX(), expandY(), showHighlights(dots));
     }
 
@@ -126,4 +135,39 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
         });
         return points;
     }
+
+    private Point[] createFixedSamplePoints() {
+        Point[] points = {new Point(5, 415),
+                new Point(42, 352),
+                new Point(79, 418),
+                new Point(116, 389),
+                new Point(153, 381),
+                new Point(190, 656),
+                new Point(227, 439),
+                new Point(264, 311),
+                new Point(301, 110),
+                new Point(338, 312),
+                new Point(375, 418),
+                new Point(412, 317),
+                new Point(449, 334),
+                new Point(486, 278),
+                new Point(523, 437),
+                new Point(560, 405),
+                new Point(597, 367),
+                new Point(634, 272),
+                new Point(671, 331),
+                new Point(708, 294),
+        };
+        return points;
+    }
+
+
+    private void fillChartWithRandomData() {
+        int totalCount = 25;
+        List<Point> points = createRandomPoints(totalCount, 800, 400);
+        ChartView chartView = (ChartView) $(R.id.chart).getView();
+        chartView.setData(points.toArray(new Point[0]),
+                createHighlightIndices(5, totalCount));
+    }
+
 }

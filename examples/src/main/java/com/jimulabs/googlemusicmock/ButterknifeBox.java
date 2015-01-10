@@ -15,6 +15,6 @@ public class ButterknifeBox extends MirrorAnimatorSandbox {
     @Override
     public void enterSandbox() {
         ButterknifeView v = (ButterknifeView) $(R.id.butterknife).getView();
-        v.setText("hello", "World2");
+        v.setText("Yay!", "Butterknife is supported!");
     }
 }

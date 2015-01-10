@@ -20,7 +20,6 @@ import java.util.List;
 public class ChartView extends View {
     private final Paint mLinePaint;
     private final Paint mCurvePaint;
-    private final ChartSandbox mAnimatorBox;
     private Point[] mPoints;
     private float mSpanY = 1;
     private float mSpanX = 1;
@@ -55,7 +54,6 @@ public class ChartView extends View {
                 setAntiAlias(true);
             }
         };
-        mAnimatorBox = new ChartSandbox(this);
     }
 
     public void setData(Point[] points, int[] highlightIndices) {
@@ -63,7 +61,6 @@ public class ChartView extends View {
         mHighlightIndices = highlightIndices;
         mHighlightDots = createHighlightDots(points, highlightIndices);
         updatePath();
-        mAnimatorBox.enter(mHighlightDots).start();
     }
 
     private List<HighlightDot> createHighlightDots(Point[] points, int[] highlightIndices) {
@@ -76,6 +73,7 @@ public class ChartView extends View {
     }
 
     public static class HighlightDot {
+        public static final int DEFAULT_RADIUS_DP = 15;
         public final int x;
         public final int y;
         private final Paint mStrokePaint;
@@ -88,7 +86,7 @@ public class ChartView extends View {
             this.y = y;
             mOwner = owner;
             final Resources resources = mOwner.getContext().getResources();
-            mRadius = dp2px(resources, 5);
+            mRadius = dp2px(resources, DEFAULT_RADIUS_DP);
             mStrokePaint = new Paint() {
                 {
                     setStyle(Style.STROKE);

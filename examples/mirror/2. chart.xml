@@ -4,7 +4,8 @@ which to populate your previewed layout. For a complete specification
 of sample data, please see http://jimulabs.com/sample-data-specifications/ 
 
 Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
-<screen theme="AppTheme" sandbox="com.jimulabs.googlemusicmock.ChartSandbox">
+<screen theme="AppTheme"
+        sandbox="com.jimulabs.googlemusicmock.ChartSandbox">
     <_content layout="@layout/chart">
     </_content>
 </screen>

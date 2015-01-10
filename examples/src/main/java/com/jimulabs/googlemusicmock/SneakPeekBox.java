@@ -25,21 +25,19 @@ public class SneakPeekBox extends MirrorAnimatorSandbox {
 
     @Override
     public void enterSandbox() {
-//        $(R.id.text1).scale(0, 3, 1)
-//                .duration(1000)
-//                .interpolator(new BounceInterpolator())
-//                .followedBy($(R.id.text2).alpha(0, 1))
-//                .start();
         fillViewsWithMockData();
-        animateChart();
-//        happyNewYear();
+        sequence($(R.id.text1).scale(0, 3, 1)
+                        .interpolator(android.R.interpolator.bounce)
+                        .duration(1000),
+                $(R.id.text2).alpha(0, 1).duration(1000)
+        ).start();
     }
 
     private ChartView fillViewsWithMockData() {
-        showHotswapping();
         ChartView chart = (ChartView) $(R.id.chart).getView();
         Point[] points = createSamplePoints();
-        chart.setData(points, new int[]{1, 5, 7, 11, 15, 18});
+        int[] highlightIndices = {1, 5, 7, 11, 15, 18};
+        chart.setData(points, highlightIndices);
         return chart;
     }
 
@@ -142,11 +140,11 @@ public class SneakPeekBox extends MirrorAnimatorSandbox {
                 new Point(264, 311),
                 new Point(301, 410),
                 new Point(338, 312),
-                new Point(375, 418),
+                new Point(375, 518),
                 new Point(412, 317),
                 new Point(449, 334),
                 new Point(486, 278),
-                new Point(523, 437),
+                new Point(523, 137),
                 new Point(560, 405),
                 new Point(597, 367),
                 new Point(634, 272),
