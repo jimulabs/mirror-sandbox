@@ -29,8 +29,8 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
     public void enterSandbox() {
         Log.d("ChartBox", "entering "+this);
         fillChartWithMockData();
-        sequence($(R.id.chart).animator("spanX", 0f, 1f).duration(1000),
-                $(R.id.chart).animator("spanY", 0f, 1f).duration(1000),
+        sequence($(R.id.chart).animator("spanX", 0, 1).duration(1000),
+                $(R.id.chart).animator("spanY", 0, 1).duration(1000),
                 showMarkers()
         ).start();
     }

@@ -8,6 +8,8 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 
+import com.jimulabs.util.Optional;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -165,19 +167,19 @@ public abstract class MirrorAnimator {
 
         private void callSetter(Object target, String propertyName, Keyframe firstFrame) {
             try {
-                String setterName = "set" + capitalizeHead(propertyName);
-                Method setter = target.getClass().getMethod(setterName, firstFrame.getType());
-                setter.invoke(target, firstFrame.getValue());
-                Log.d(LOG_TAG, String.format("%s=%s", propertyName, firstFrame.getValue()));
-            } catch (IllegalAccessException | NoSuchMethodException
-                    | InvocationTargetException e) {
+                Class type = firstFrame.getType();
+                Optional<Method> setter = AnimatorUtils.getSetter(target, propertyName, type);
+                if (setter.isPresent()) {
+                    setter.get().invoke(target, firstFrame.getValue());
+                    Log.d(LOG_TAG, String.format("%s=%s", propertyName, firstFrame.getValue()));
+                } else {
+                    Log.e(LOG_TAG, String.format("Setter for %s(%s) does not exist", propertyName, type));
+                }
+            } catch (IllegalAccessException | InvocationTargetException e) {
                 Log.e(LOG_TAG, String.format("Failed to set value of \"%s\"", propertyName), e);
             }
         }
 
-        private String capitalizeHead(String propertyName) {
-            return propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1);
-        }
     }
 
     public interface StageSetter {
