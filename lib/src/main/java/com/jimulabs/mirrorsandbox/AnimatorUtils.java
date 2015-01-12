@@ -45,8 +45,18 @@ public class AnimatorUtils {
         return sequence(context, Arrays.asList(animators));
     }
 
+    /**
+     *
+     * @param context an Android context object to be used to resolve things like interpolator
+     * @param target the target object to be animated
+     * @param property the property to be animated
+     * @param values values to be animated on
+     * @return a MirrorAnimator initialized with the "int" setter of the property if the setter exists,
+     *  otherwise, it'll try to find the "float" setter and return a MirrorAnimator based on it.
+     * @throws java.lang.IllegalArgumentException if neither "int" or "float" setters are found
+     */
     public static MirrorAnimator animator(Context context, Object target, String property, int... values) {
-        if (hasIntSetter(target, property)) {
+        if (getSetter(target, property, int.class).isPresent()) {
             ObjectAnimator animator = ObjectAnimator.ofInt(target, property, values);
             Keyframe firstFrame = Keyframe.ofInt(0, values[0]);
             Keyframe lastFrame = Keyframe.ofInt(0, values[values.length - 1]);
@@ -60,15 +70,26 @@ public class AnimatorUtils {
         }
     }
 
-    private static boolean hasIntSetter(Object target, String property) {
-        return getSetter(target, property, int.class).isPresent();
-    }
-
+    /**
+     *
+     * @param context an Android context object to be used to resolve things like interpolator
+     * @param target the target object to be animated
+     * @param property the property to be animated
+     * @param values values to be animated on
+     * @return a MirrorAnimator
+     * @throws java.lang.IllegalArgumentException if the setter for the property isn't found
+     */
     public static MirrorAnimator animator(Context context, Object target, String property, float... values) {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(target, property, values);
-        Keyframe firstFrame = Keyframe.ofFloat(0, values[0]);
-        Keyframe lastFrame = Keyframe.ofFloat(0, values[values.length - 1]);
-        return new MirrorObjectAnimator(context, animator, firstFrame, lastFrame);
+        if (getSetter(target, property, float.class).isPresent()) {
+            ObjectAnimator animator = ObjectAnimator.ofFloat(target, property, values);
+            Keyframe firstFrame = Keyframe.ofFloat(0, values[0]);
+            Keyframe lastFrame = Keyframe.ofFloat(0, values[values.length - 1]);
+            return new MirrorObjectAnimator(context, animator, firstFrame, lastFrame);
+        } else {
+            String msg = String.format("Cannot create animator because the setter for %s(float) doesn't exist or not public.",
+                    property);
+            throw new IllegalArgumentException(msg);
+        }
     }
 
     public static void setInterpolator(Context context, Animator animator, int resId) {
