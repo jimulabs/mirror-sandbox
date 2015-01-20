@@ -20,11 +20,6 @@ import java.util.Random;
  * Created by lintonye on 2014-12-20.
  */
 public class ChartSandbox extends MirrorAnimatorSandbox {
-
-    public ChartSandbox(View root) {
-        super(root);
-    }
-
     @Override
     public void enterSandbox() {
         Log.d("ChartBox", "entering "+this);

@@ -12,10 +12,6 @@ import com.jimulabs.mirrorsandbox.MirrorView;
  * Created by lintonye on 14-12-16.
  */
 public class AlbumDetailSandbox extends MirrorAnimatorSandbox {
-    public AlbumDetailSandbox(View root) {
-        super(root);
-    }
-
     public MirrorAnimator showFab() {
         return $(R.id.fab).scale(0, 1);
     }

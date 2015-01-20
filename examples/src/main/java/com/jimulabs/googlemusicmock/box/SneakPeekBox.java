@@ -21,10 +21,6 @@ import java.util.Random;
  * Created by lintonye on 14-12-24.
  */
 public class SneakPeekBox extends MirrorAnimatorSandbox {
-    public SneakPeekBox(View root) {
-        super(root);
-    }
-
     @Override
     public void enterSandbox() {
         fillViewsWithMockData();

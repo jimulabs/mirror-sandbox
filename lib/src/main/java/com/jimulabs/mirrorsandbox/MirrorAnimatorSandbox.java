@@ -1,6 +1,7 @@
 package com.jimulabs.mirrorsandbox;
 
 import android.content.Context;
+import android.util.AttributeSet;
 import android.view.View;
 
 import java.util.List;
@@ -20,16 +21,25 @@ import java.util.List;
 public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
     private static final String LOG_TAG = "MirrorAnimatorSandbox";
 
-    private final View mRootView;
+    private View mRootView;
 
-    public MirrorAnimatorSandbox(View root) {
-        mRootView = root;
+    public MirrorAnimatorSandbox() {
         setGlobalSpeed(1);
     }
 
     @Override
     public void destroySandbox() {
         // does nothing by default
+    }
+
+    @Override
+    public void setRootView(View rootView) {
+        mRootView = rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, Context context, AttributeSet attrs) {
+        // do nothing by default
     }
 
     public static class CannotFindViewException extends RuntimeException {

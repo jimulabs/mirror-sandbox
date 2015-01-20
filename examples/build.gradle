@@ -32,7 +32,16 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.android.support:recyclerview-v7:21.0.3'
     compile 'com.jakewharton:butterknife:6.0.0'
+    compile 'uk.co.chrisjenx:calligraphy:2.0.0'
 
     // compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.1.+'
     compile project(':lib')
+}
+
+apply plugin: 'idea'
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
 }
