@@ -1,5 +1,9 @@
 package com.jimulabs.mirrorsandbox;
 
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
+
 /**
  * MirrorSandbox classes are considered "design mode" code for quick experiments or populating views
  * with mock data. Think of it as a REPL for Android UI (layouts and animations) when used in
@@ -30,4 +34,9 @@ public interface MirrorSandbox {
      * This method can be used to release things that are not supposed to be persist across refreshes.
      */
     void destroySandbox();
+
+
+    void onViewCreated(View view, Context context, AttributeSet attrs);
+
+    void setRootView(View rootView);
 }
