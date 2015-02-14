@@ -42,7 +42,7 @@ public abstract class MirrorAnimatorSandbox extends MirrorSandboxBase {
         }
     }
 
-    private Context getContext() {
+    protected Context getContext() {
         return mRootView.getContext();
     }
 
@@ -60,11 +60,11 @@ public abstract class MirrorAnimatorSandbox extends MirrorSandboxBase {
     }
 
     protected MirrorAnimator together(MirrorAnimator... animators) {
-        return MotionKit.together(getContext(), animators);
+        return MotionKit.together(animators);
     }
 
     protected MirrorAnimator together(List<MirrorAnimator> animators) {
-        return MotionKit.together(getContext(), animators);
+        return MotionKit.together(animators);
     }
 
     protected MirrorAnimator sq(MirrorAnimator... animators) {
@@ -72,7 +72,7 @@ public abstract class MirrorAnimatorSandbox extends MirrorSandboxBase {
     }
 
     protected MirrorAnimator sq(List<MirrorAnimator> animators) {
-        return MotionKit.sequence(getContext(), animators);
+        return MotionKit.sequence(animators);
     }
 
     protected MirrorWrap wrapToAnimate(Object obj) {
@@ -80,11 +80,11 @@ public abstract class MirrorAnimatorSandbox extends MirrorSandboxBase {
     }
 
     protected MirrorAnimator sequence(MirrorAnimator... animators) {
-        return MotionKit.sequence(getContext(), animators);
+        return MotionKit.sequence(animators);
     }
 
     protected MirrorAnimator sequence(List<MirrorAnimator> animators) {
-        return MotionKit.sequence(getContext(), animators);
+        return MotionKit.sequence(animators);
     }
 
     public void setGlobalSpeed(double speed) {

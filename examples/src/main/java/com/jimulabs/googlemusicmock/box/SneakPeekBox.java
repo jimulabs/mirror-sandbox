@@ -26,7 +26,7 @@ public class SneakPeekBox extends MirrorAnimatorSandbox {
     public void enterSandbox() {
         fillViewsWithMockData();
         sequence($(R.id.text1).scale(0, 3, 1)
-                        .interpolator(android.R.interpolator.bounce)
+                        .interpolator(getContext(), android.R.interpolator.bounce)
                         .duration(1000),
                 $(R.id.text2).alpha(0, 1).duration(1000)
         ).start();
