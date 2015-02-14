@@ -18,10 +18,6 @@ import java.util.List;
  * Android's property animators. This class includes some helper methods for finding a view
  * and choreographing animators.
  *
- * When you are done experimenting, just use the animators in production:
- *
- *   new MyFantasticAnimatorBox(view).someAnimation().start();
- *
  * Created by lintonye on 14-12-16.
  */
 public abstract class MirrorAnimatorSandbox extends MirrorSandboxBase {
