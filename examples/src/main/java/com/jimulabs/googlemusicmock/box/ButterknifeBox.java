@@ -4,7 +4,6 @@ import android.view.View;
 
 import com.jimulabs.googlemusicmock.ButterknifeView;
 import com.jimulabs.googlemusicmock.R;
-import com.jimulabs.mirrorsandbox.MirrorAnimatorSandbox;
 
 /**
  * Created by lintonye on 14-12-29.

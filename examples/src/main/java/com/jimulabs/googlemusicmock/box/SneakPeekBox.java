@@ -3,13 +3,10 @@ package com.jimulabs.googlemusicmock.box;
 import android.graphics.Point;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.BounceInterpolator;
 
 import com.jimulabs.googlemusicmock.ChartView;
 import com.jimulabs.googlemusicmock.R;
-import com.jimulabs.mirrorsandbox.MirrorAnimator;
-import com.jimulabs.mirrorsandbox.MirrorAnimatorSandbox;
-import com.jimulabs.mirrorsandbox.MirrorView;
+import com.jimulabs.motionkit.MirrorAnimator;
 
 import java.util.ArrayList;
 import java.util.Collections;
