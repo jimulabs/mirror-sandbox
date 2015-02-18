@@ -2,6 +2,7 @@ package com.jimulabs.googlemusicmock;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -26,7 +27,9 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.AlbumVH> {
 
     @Override
     public AlbumVH onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new AlbumVH(parent);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View itemView = inflater.inflate(R.layout.album_grid_item_complex, parent, false);
+        return new AlbumVH(itemView);
     }
 
     @Override
