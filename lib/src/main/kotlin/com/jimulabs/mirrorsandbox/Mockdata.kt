@@ -1,4 +1,4 @@
-package com.jimulabs.mirrorsandbox;
+package com.jimulabs.mirrorsandbox
 
 import java.util.Random
 import kotlin.properties.Delegates
