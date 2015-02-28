@@ -1,4 +1,4 @@
-<!-- [ Mirror metadata ] generatedAt: 1424216367758 -->
+<!-- [ Mirror metadata ] generatedAt: 1425084894882 -->
 <!-- Generated screen file. Fill the id tags below with content with
 which to populate your previewed layout. For a complete specification
 of sample data, please see http://jimulabs.com/sample-data-specifications/ 
@@ -10,5 +10,9 @@ Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" ov
         <album_art src="@drawable/image_resource" />
         <album_art src="relative_path/image.jpg" /> -->
         <album_art />
+        <!-- TextView Examples:
+        <artist text="@string/string_resource" />
+        <artist text="Text literal" textSize="14sp" /> -->
+        <artist />
     </_content>
 </screen>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -37,6 +38,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.AlbumVH> {
         Album album = mAlbums.get(position);
         Context context = holder.albumArt.getContext();
         Picasso.with(context).load(album.albumArtUrl).into(holder.albumArt);
+        holder.artist.setText(album.artist);
     }
 
     @Override
@@ -47,6 +49,8 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.AlbumVH> {
     static class AlbumVH extends RecyclerView.ViewHolder {
         @InjectView(R.id.album_art)
         ImageView albumArt;
+        @InjectView(R.id.artist)
+        TextView artist;
         public AlbumVH(View itemView) {
             super(itemView);
             ButterKnife.inject(this, itemView);

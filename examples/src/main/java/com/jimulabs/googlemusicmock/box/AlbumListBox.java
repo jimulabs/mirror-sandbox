@@ -35,7 +35,7 @@ public class AlbumListBox extends MirrorSandboxBase {
     public void enterSandbox() {
         List<Album> albums = new ArrayList<>();
         MockData md = new MockData();
-        for (int i = 0; i< 10;i++) {
+        for (int i = 0; i < 100; i++) {
             Album album = new Album(md.imageUrl(ImageSize.small), md.personName(),
                     md.phrase(), md.paragraph());
             albums.add(album);

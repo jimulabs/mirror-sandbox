@@ -3,7 +3,6 @@ package com.jimulabs.googlemusicmock.box;
 import android.content.Context;
 import android.view.View;
 
-import com.jimulabs.mirrorsandbox.MirrorSandbox;
 import com.jimulabs.mirrorsandbox.MirrorSandboxBase;
 import com.jimulabs.motionkit.MirrorAnimator;
 import com.jimulabs.motionkit.MirrorView;
