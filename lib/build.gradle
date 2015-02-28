@@ -39,4 +39,4 @@ dependencies {
     compile 'org.jetbrains.kotlin:kotlin-stdlib:0.10.+'
 }
 
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+apply from: file('gradle-mvn-push.gradle')
