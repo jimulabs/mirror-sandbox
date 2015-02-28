@@ -10,8 +10,8 @@ package com.jimulabs.mirrorsandbox;
  *
  * &lt;screen sandbox="foo.bar.BarBox"&gt;
  *
- * In most cases, you can subclass {@link com.jimulabs.mirrorsandbox.MirrorAnimatorSandbox} which
- * provides a few helper methods that make tweaking animations easy.
+ * In most cases, you can subclass {@link com.jimulabs.mirrorsandbox.MirrorSandboxBase} which
+ * provides some base implementations.
  *
  * Created by lintonye on 2014-12-23.
  */

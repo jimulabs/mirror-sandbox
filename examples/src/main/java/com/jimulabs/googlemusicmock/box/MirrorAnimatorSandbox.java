@@ -1,7 +1,13 @@
-package com.jimulabs.mirrorsandbox;
+package com.jimulabs.googlemusicmock.box;
 
 import android.content.Context;
 import android.view.View;
+
+import com.jimulabs.mirrorsandbox.MirrorSandboxBase;
+import com.jimulabs.motionkit.MirrorAnimator;
+import com.jimulabs.motionkit.MirrorView;
+import com.jimulabs.motionkit.MirrorWrap;
+import com.jimulabs.motionkit.MotionKit;
 
 import java.util.List;
 
@@ -11,19 +17,13 @@ import java.util.List;
  * Android's property animators. This class includes some helper methods for finding a view
  * and choreographing animators.
  *
- * When you are done experimenting, just use the animators in production:
- *
- *   new MyFantasticAnimatorBox(view).someAnimation().start();
- *
  * Created by lintonye on 14-12-16.
  */
-public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
+public abstract class MirrorAnimatorSandbox extends MirrorSandboxBase {
     private static final String LOG_TAG = "MirrorAnimatorSandbox";
 
-    private final View mRootView;
-
     public MirrorAnimatorSandbox(View root) {
-        mRootView = root;
+        super(root);
         setGlobalSpeed(1);
     }
 
@@ -41,7 +41,7 @@ public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
         }
     }
 
-    private Context getContext() {
+    protected Context getContext() {
         return mRootView.getContext();
     }
 
@@ -59,11 +59,11 @@ public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
     }
 
     protected MirrorAnimator together(MirrorAnimator... animators) {
-        return AnimatorUtils.together(getContext(), animators);
+        return MotionKit.together(animators);
     }
 
     protected MirrorAnimator together(List<MirrorAnimator> animators) {
-        return AnimatorUtils.together(getContext(), animators);
+        return MotionKit.together(animators);
     }
 
     protected MirrorAnimator sq(MirrorAnimator... animators) {
@@ -71,7 +71,7 @@ public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
     }
 
     protected MirrorAnimator sq(List<MirrorAnimator> animators) {
-        return AnimatorUtils.sequence(getContext(), animators);
+        return MotionKit.sequence(animators);
     }
 
     protected MirrorWrap wrapToAnimate(Object obj) {
@@ -79,14 +79,14 @@ public abstract class MirrorAnimatorSandbox implements MirrorSandbox {
     }
 
     protected MirrorAnimator sequence(MirrorAnimator... animators) {
-        return AnimatorUtils.sequence(getContext(), animators);
+        return MotionKit.sequence(animators);
     }
 
     protected MirrorAnimator sequence(List<MirrorAnimator> animators) {
-        return AnimatorUtils.sequence(getContext(), animators);
+        return MotionKit.sequence(animators);
     }
 
     public void setGlobalSpeed(double speed) {
-        AnimatorUtils.setGlobalSpeed(speed);
+        MotionKit.setGlobalSpeed(speed);
     }
 }

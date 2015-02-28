@@ -1,0 +1,9 @@
+<!-- [ Mirror metadata ] generatedAt: 1417617755327 --><!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen sandbox="com.jimulabs.googlemusicmock.box.AlbumListBox">
+    <_content layout="@layout/activity_album_list">
+        <toolbar title="@string/app_name" menu="menu_album_list" />
+        <album_list />
+    </_content>
+</screen>
