@@ -32,7 +32,7 @@ public class AlbumListBox extends MirrorSandboxBase {
     }
 
     @Override
-    public void enterSandbox() {
+    public void onLayoutDone(View rootView) {
         List<Album> albums = new ArrayList<>();
         MockData md = new MockData();
         for (int i = 0; i < 100; i++) {

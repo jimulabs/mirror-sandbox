@@ -13,7 +13,7 @@ public abstract class MirrorSandboxBase implements MirrorSandbox {
     }
 
     @Override
-    public void destroySandbox() {
+    public void onDestroy() {
         // do nothing by default
     }
 }
