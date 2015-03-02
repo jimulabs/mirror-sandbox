@@ -26,7 +26,7 @@ public interface MirrorSandbox {
      * views with mock data. This method is not supposed to be called from production code.
      * @param rootView
      */
-    void onLayoutInflated(View rootView);
+    void onLayoutDone(View rootView);
 
     /**
      * Mirror calls this method from the UI thread in the Activity#onDestroy() call back.

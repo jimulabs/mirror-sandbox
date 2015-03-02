@@ -23,7 +23,7 @@ public class SneakPeekBox extends MirrorAnimatorSandbox {
     }
 
     @Override
-    public void onLayoutInflated(View rootView) {
+    public void onLayoutDone(View rootView) {
         fillViewsWithMockData();
         sequence($(R.id.text1).scale(0, 3, 1)
                         .interpolator(getContext(), android.R.interpolator.bounce)

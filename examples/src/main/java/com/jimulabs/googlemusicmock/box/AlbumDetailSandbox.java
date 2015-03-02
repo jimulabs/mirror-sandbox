@@ -49,7 +49,7 @@ public class AlbumDetailSandbox extends MirrorAnimatorSandbox {
     }
 
     @Override
-    public void onLayoutInflated(View rootView) {
+    public void onLayoutDone(View rootView) {
 //        setGlobalSpeed(0.5);
         enter().start();
 //        showTitleContainer().start();

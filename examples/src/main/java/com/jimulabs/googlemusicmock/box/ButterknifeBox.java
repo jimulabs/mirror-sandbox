@@ -14,7 +14,7 @@ public class ButterknifeBox extends MirrorAnimatorSandbox {
     }
 
     @Override
-    public void onLayoutInflated(View rootView) {
+    public void onLayoutDone(View rootView) {
         ButterknifeView v = (ButterknifeView) $(R.id.butterknife).getView();
         v.setText("Yay!", "Butterknife is supported!");
     }
