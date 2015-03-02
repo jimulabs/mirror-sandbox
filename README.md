@@ -14,35 +14,35 @@ See [this blog post](http://jimulabs.com/2015/01/building-android-animations-mir
 #Download
 via Gradle:
 ```
-compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.1.+'
+debugCompile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.+'
 ```
 #Usage
 ## Overview
 Mirror Sandbox consists of two parts: 
 
 1. `MirrorSandbox` interface that Mirror calls when previewing a screen
-2. A set of simple wrappers of Android's property animators that make it easy to create and choreograph animations, such as [`MirrorAnimatorSandbox`](https://github.com/jimulabs/mirror-sandbox/blob/master/lib/src/main/java/com/jimulabs/mirrorsandbox/MirrorAnimatorSandbox.java), [`MirrorAnimator`](https://github.com/jimulabs/mirror-sandbox/blob/master/lib/src/main/java/com/jimulabs/mirrorsandbox/MirrorAnimator.java) etc. See the source code for detailed documentation.
+2. A set of simple utilities for generating mock data. See [MockData](https://github.com/jimulabs/mirror-sandbox/blob/master/lib/src/main/kotlin/com/jimulabs/mirrorsandbox/Mockdata.kt) class.
+
+Note, the wrappers of Android's property animators have been moved to its own repo, [motion-kit](https://github.com/jimulabs/motion-kit).
 
 ##Steps
-**Step 1:** Extend `MirrorAnimatorSandbox` (or implement the interface `MirrorSandbox`).
+**Step 1:** Extend `MirrorSandboxBase` (or implement the interface `MirrorSandbox`).
 
 
 ```Java
-public class MySandbox extends MirrorAnimatorSandbox {
+public class MySandbox extends MirrorSandboxBase {
 	public MySandbox(View view) { super(view); }
-	@Override
-	public void enterSandbox() {
-		// here you can experiment animations
-		MirrorAnimator anim1 = $(R.id.view1).scale(0, 3, 1)
-			.interpolator(android.R.interpolator.bounce)
-			.duration(1000);
-		MirrorAnimator anim2 = $(R.id.view2).alpha(0, 1);
-		// choreograph animators
-		sequence(anim1, anim2).start();
-		// or populate your views with mock data
-		ChartView chart = (ChartView)$(R.id.chart).getView();
-		chart.setData(createSomeMockData());
-	}
+    @Override
+    public void onLayoutDone(View rootView) {
+        List<Album> albums = new ArrayList<>();
+        MockData md = new MockData();
+        for (int i = 0; i < 100; i++) {
+            Album album = new Album(md.imageUrl(ImageSize.small), md.personName(),
+                    md.phrase(), md.paragraph());
+            albums.add(album);
+        }
+        albumList.setAdapter(new AlbumsAdapter(albums));
+    }
 }
 ```
 
