@@ -1,5 +1,7 @@
 package com.jimulabs.mirrorsandbox;
 
+import android.view.View;
+
 /**
  * MirrorSandbox classes are considered "design mode" code for quick experiments or populating views
  * with mock data. Think of it as a REPL for Android UI (layouts and animations) when used in
@@ -22,12 +24,13 @@ public interface MirrorSandbox {
      *
      * This method is considered as a "design mode" used for quick experiments or populating
      * views with mock data. This method is not supposed to be called from production code.
+     * @param rootView
      */
-    void enterSandbox();
+    void onLayoutInflated(View rootView);
 
     /**
      * Mirror calls this method from the UI thread in the Activity#onDestroy() call back.
      * This method can be used to release things that are not supposed to be persist across refreshes.
      */
-    void destroySandbox();
+    void onDestroy();
 }
