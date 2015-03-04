@@ -1,11 +1,15 @@
-package com.jimulabs.mirrorsandbox
+package com.jimulabs.mirrorsandbox.mockdata;
 
-import kotlin.properties.Delegates
+import java.util.Arrays;
+import java.util.List;
 
-class PersonNameGen : MockDataGenerator<String> {
-    override val samples: Stream<String> by Delegates.lazy {
-        var names = arrayListOf(
-                "Marilyn Monroe",
+/**
+ * Created by lintonye on 15-03-04.
+ */
+public class PersonNameGen extends MockData.MockDataGenerator<String> {
+    @Override
+    protected List<String> getSamples() {
+        return Arrays.asList("Marilyn Monroe",
                 "Abraham Lincoln",
                 "Mother Teresa",
                 "John F. Kennedy",
@@ -104,8 +108,6 @@ class PersonNameGen : MockDataGenerator<String> {
                 "J.R.R. Tolkien",
                 "Tom Cruise",
                 "Billie Jean King",
-                "Anne Frank"
-        )
-        names.stream()
+                "Anne Frank");
     }
 }

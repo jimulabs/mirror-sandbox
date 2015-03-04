@@ -7,9 +7,9 @@ import android.view.View;
 import com.jimulabs.googlemusicmock.Album;
 import com.jimulabs.googlemusicmock.AlbumsAdapter;
 import com.jimulabs.googlemusicmock.R;
-import com.jimulabs.mirrorsandbox.ImageSize;
+import com.jimulabs.mirrorsandbox.mockdata.ImageSize;
 import com.jimulabs.mirrorsandbox.MirrorSandboxBase;
-import com.jimulabs.mirrorsandbox.MockData;
+import com.jimulabs.mirrorsandbox.mockdata.MockData;
 
 import java.util.ArrayList;
 import java.util.List;

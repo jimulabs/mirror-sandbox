@@ -9,7 +9,6 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 21
@@ -30,13 +29,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-}
-
-dependencies {
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.10.+'
 }
 
 apply from: file('gradle-mvn-push.gradle')
