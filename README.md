@@ -14,7 +14,7 @@ See [this blog post](http://jimulabs.com/2015/01/building-android-animations-mir
 #Download
 via Gradle:
 ```
-debugCompile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.+'
+compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.0'
 ```
 #Usage
 ## Overview
