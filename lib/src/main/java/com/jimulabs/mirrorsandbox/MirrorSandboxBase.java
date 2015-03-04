@@ -13,7 +13,12 @@ public abstract class MirrorSandboxBase implements MirrorSandbox {
     }
 
     @Override
-    public void onDestroy() {
+    public void $onCreate(View rootView) {
+        // do nothing by default
+    }
+
+    @Override
+    public void $onDestroy() {
         // do nothing by default
     }
 }
