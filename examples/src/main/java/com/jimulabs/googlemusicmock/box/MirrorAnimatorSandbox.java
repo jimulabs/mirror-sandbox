@@ -28,7 +28,7 @@ public abstract class MirrorAnimatorSandbox extends MirrorSandboxBase {
     }
 
     @Override
-    public void onDestroy() {
+    public void $onDestroy() {
         // does nothing by default
     }
 

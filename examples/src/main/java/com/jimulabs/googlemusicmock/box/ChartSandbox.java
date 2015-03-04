@@ -25,7 +25,7 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
     }
 
     @Override
-    public void onLayoutDone(View rootView) {
+    public void $onLayoutDone(View rootView) {
         Log.d("ChartBox", "entering "+this);
         fillChartWithMockData();
         sequence($(R.id.chart).animator("spanX", 0, 1).duration(1000),
@@ -35,7 +35,7 @@ public class ChartSandbox extends MirrorAnimatorSandbox {
     }
 
     @Override
-    public void onDestroy() {
+    public void $onDestroy() {
         Log.d("ChartBox", "destroying "+this);
     }
 
