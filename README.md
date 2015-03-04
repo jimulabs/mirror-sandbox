@@ -21,7 +21,7 @@ compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.0'
 Mirror Sandbox consists of two parts: 
 
 1. `MirrorSandbox` interface that Mirror calls when previewing a screen
-2. A set of simple utilities for generating mock data. See [MockData](https://github.com/jimulabs/mirror-sandbox/blob/master/lib/src/main/kotlin/com/jimulabs/mirrorsandbox/Mockdata.kt) class.
+2. A set of simple utilities for generating mock data. See [MockData](https://github.com/jimulabs/mirror-sandbox/blob/master/lib/src/main/java/com/jimulabs/mirrorsandbox/mockdata/MockData.java) class.
 
 Note, the wrappers of Android's property animators have been moved to its own repo, [motion-kit](https://github.com/jimulabs/motion-kit).
 
