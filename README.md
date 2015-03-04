@@ -33,7 +33,7 @@ Note, the wrappers of Android's property animators have been moved to its own re
 public class MySandbox extends MirrorSandboxBase {
 	public MySandbox(View view) { super(view); }
     @Override
-    public void onLayoutDone(View rootView) {
+    public void $onLayoutDone(View rootView) {
         List<Album> albums = new ArrayList<>();
         MockData md = new MockData();
         for (int i = 0; i < 100; i++) {
