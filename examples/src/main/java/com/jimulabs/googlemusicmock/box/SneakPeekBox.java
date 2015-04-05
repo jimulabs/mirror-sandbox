@@ -1,5 +1,6 @@
 package com.jimulabs.googlemusicmock.box;
 
+import android.content.Context;
 import android.graphics.Point;
 import android.util.Log;
 import android.view.View;
