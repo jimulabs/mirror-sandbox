@@ -1,9 +1,11 @@
 package com.jimulabs.googlemusicmock.box;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
+import com.facebook.stetho.Stetho;
 import com.jimulabs.googlemusicmock.Album;
 import com.jimulabs.googlemusicmock.AlbumsAdapter;
 import com.jimulabs.googlemusicmock.R;
@@ -25,6 +27,15 @@ public class AlbumListBox extends MirrorSandboxBase {
     @InjectView(R.id.album_list)
     RecyclerView albumList;
 
+    @SuppressWarnings("unused")
+    public static void $init(Context context) {
+        Stetho.initialize(
+                Stetho.newInitializerBuilder(context)
+                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(context))
+                        .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))
+                        .build());
+    }
+    
     public AlbumListBox(View rootView) {
         super(rootView);
         ButterKnife.inject(this, rootView);

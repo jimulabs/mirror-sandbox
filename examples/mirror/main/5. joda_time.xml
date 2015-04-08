@@ -1,0 +1,10 @@
+<!-- [ Mirror metadata ] generatedAt: 1428244489848 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen sandbox="com.jimulabs.googlemusicmock.box.JodaTimeBox">
+    <_content layout="@layout/joda_time">
+    </_content>
+</screen>

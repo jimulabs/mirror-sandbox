@@ -25,6 +25,10 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
 }
 
 repositories {
@@ -38,8 +42,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.0.0'
     compile 'com.squareup.picasso:picasso:2.5.0'
 
-//    compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.1.+'
+//    compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.1'
     compile project(':lib')
 
-    compile 'com.jimulabs.motionkit:motion-kit:0.1.0'
+    compile 'com.jimulabs.motionkit:motion-kit:0.1.1-SNAPSHOT@aar'
+    compile 'net.danlew:android.joda:2.7.1'
+
+    compile 'com.facebook.stetho:stetho:1.1.0'
 }
