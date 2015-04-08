@@ -63,7 +63,7 @@ public class MySandbox extends MirrorSandboxBase {
 }
 ```
 
-For Kotlin code, the `platformStatic` needs to be used:
+For Kotlin code, the keyword `platformStatic` needs to be used:
 
 ```kotlin
 public class SomeBox(root: View) : MirrorSandboxBase(root) {
