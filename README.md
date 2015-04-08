@@ -14,7 +14,7 @@ See [this blog post](http://jimulabs.com/2015/01/building-android-animations-mir
 #Download
 via Gradle:
 ```
-compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.0'
+compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.1'
 ```
 #Usage
 ## Overview
@@ -45,6 +45,37 @@ public class MySandbox extends MirrorSandboxBase {
     }
 }
 ```
+
+Optionally, you can add a static method `$init(Context)` in the sandbox class. In this method, you can put initialization code that needs to run before views are created. For example, the code below enables the use of [Stetho](https://github.com/facebook/stetho):
+
+```java
+public class MySandbox extends MirrorSandboxBase {
+    @SuppressWarnings("unused")
+    // This method doesn't have to public
+    public static void $init(Context context) {
+        Stetho.initialize(
+                Stetho.newInitializerBuilder(context)
+                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(context))
+                        .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))
+                        .build());
+    }
+    ...
+}
+```
+
+For Kotlin code, the `platformStatic` needs to be used:
+
+```kotlin
+public class SomeBox(root: View) : MirrorSandboxBase(root) {
+    companion object {
+        platformStatic fun `$init`(context: Context) {
+           ...
+        }
+    }
+  ...
+}
+```
+
 
 **Step 2:** In a mirror screen file, set the `sandbox` attribute of the `screen` element to the fully qualified name of your sandbox class:
 
